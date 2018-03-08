@@ -34,19 +34,19 @@ html, body {
 
 .img-first {
   background-image: url(../img/1.jpg);
-  height: 700px;
+  height: 770px;
 }
 
 .img-second {
   background-image: url(../img/2.jpg);
-  margin-top: 620px;
-  height: 700px;
+  margin-top: 770px;
+  height: 770px;
 }
 
 .img-third {
   background-image: url(../img/3.jpg);
-  margin-top: 540px;
-  height: 620px;
+  margin-top: 770px;
+  height: 770px;
 }
 
 .content {
@@ -114,7 +114,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 80px;
 }
 #section1, #section2, #section3, #section4, #section5 {
   display: flex;
@@ -123,25 +122,25 @@ main {
 }
 
 #section1 {
-  height: 620px;
+  height: 770px;
 }
 
 #section2 {
   background: #cc5960;
-  height: 620px;
+  height: 770px;
 }
 
 #section3 {
-  height: 620px;
+  height: 770px;
 }
 
 #section4 {
   background: #a8a4af;
-  height: 620px;
+  height: 770px;
 }
 
 #section5 {
-  height: 620px;
+  height: 770px;
 }
 
 section h2 {
