@@ -10,7 +10,6 @@
 .slider img {
   width: 100%;
   height: auto;
-  min-height: 480px;
 }
 
 .slid_text {
@@ -42,7 +41,7 @@
 }
 
 .slider .slick-dots {
-  bottom: 140px;
+  bottom: 15%;
 }
 .slider .slick-dots li {
   margin: 0 10px;
@@ -53,4 +52,14 @@
 }
 .slider .slick-dots li.slick-active button:before {
   color: #fff;
+}
+
+@media screen and (max-width: 870px) {
+  .slider img {
+    width: auto;
+    height: 480px;
+  }
+  .slider .slick-dots {
+  bottom: 10%;
+}
 }
