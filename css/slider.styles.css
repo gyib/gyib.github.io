@@ -1,0 +1,56 @@
+.slider {
+  width: 100%;
+  min-height: 480px;
+}
+
+.slid {
+  position: relative;
+}
+
+.slider img {
+  width: 100%;
+  height: auto;
+  min-height: 480px;
+}
+
+.slid_text {
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  color: #FFF;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.slider .slick-prev {
+  width: 40px;
+  height: 40px;
+  left: 25px;
+  z-index: 2;
+}
+
+.slider .slick-next {
+  width: 40px;
+  height: 40px;
+  right: 25px;
+  z-index: 2;
+}
+
+.slider .slick-prev:before, .slider .slick-next:before {
+  font-size: 40px;
+}
+
+.slider .slick-dots {
+  bottom: 140px;
+}
+.slider .slick-dots li {
+  margin: 0 10px;
+}
+.slider .slick-dots li button:before {
+  font-size: 20px;
+  color: #fff;
+}
+.slider .slick-dots li.slick-active button:before {
+  color: #fff;
+}
