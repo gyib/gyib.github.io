@@ -29,6 +29,13 @@ var lineChart = new Chart(forecastCanvas, {
             display: false,
         },
         maintainAspectRatio: false,
-
+        layout: {
+            padding: {
+                left: 0,
+                right: 20,
+                top: 0,
+                bottom: 0
+            }
+        }
     }
 });
