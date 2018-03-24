@@ -62,12 +62,13 @@ nav a {
   cursor: pointer;
   box-shadow: inset 0px 0px 10px #fff;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  -moz-user-select:    none;
+  -ms-user-select:     none;
+  user-select:         none;
   -webkit-appearance: none;
   -moz-appearance:    none;
   appearance:         none;
+  -webkit-tap-highlight-color: transparent;
 }
 nav a:hover {
   background: #fdfcfc2b;
@@ -130,12 +131,13 @@ h2{
               2px 2px #fdfdfd38, 
               3px 3px #fdfdfd38;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  -moz-user-select:    none;
+  -ms-user-select:     none;
+  user-select:         none;
   -webkit-appearance: none;
   -moz-appearance:    none;
   appearance:         none;
+  -webkit-tap-highlight-color: transparent;
 }
 #btn_reg:active {
   -webkit-transform: translate(3px, 3px);
@@ -161,12 +163,13 @@ h2{
   background: url(../img/arrowup.svg) no-repeat center;
   box-shadow: 2px 2px 2px #fdfdfd38;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  -moz-user-select:    none;
+  -ms-user-select:     none;
+  user-select:         none;
   -webkit-appearance: none;
   -moz-appearance:    none;
   appearance:         none;
+  -webkit-tap-highlight-color: transparent;
 }
 .scrollup:active {
   -webkit-transform: translate(2px, 2px);

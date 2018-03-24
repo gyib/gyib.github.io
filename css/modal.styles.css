@@ -41,12 +41,13 @@
   padding: 15px;
   cursor: pointer;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  -moz-user-select:    none;
+  -ms-user-select:     none;
+  user-select:         none;
   -webkit-appearance: none;
   -moz-appearance:    none;
   appearance:         none;
+  -webkit-tap-highlight-color: transparent;
 }
 .close svg {
   display: block;
@@ -124,10 +125,11 @@ textarea:focus {
   background: #CC3333;
   margin-top: 25px;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  -moz-user-select:    none;
+  -ms-user-select:     none;
+  user-select:         none;
   -webkit-appearance: none;
   -moz-appearance:    none;
   appearance:         none;
+  -webkit-tap-highlight-color: transparent;
 }
