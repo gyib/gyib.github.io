@@ -71,7 +71,6 @@
     line-height: 1;
 
     opacity: .75;
-    color: white;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -114,11 +113,6 @@
 }
 
 /* Dots */
-.slick-dotted.slick-slider
-{
-    margin-bottom: 30px;
-}
-
 .slick-dots
 {
     position: absolute;

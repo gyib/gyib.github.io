@@ -3,13 +3,13 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="theme-color" content="#0c0c0c">
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/global.styles.css">
 		<link rel="stylesheet" href="css/slider.styles.css">
+		<link rel="stylesheet" href="css/modal.styles.css">
 
 		<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 		<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
@@ -17,100 +17,96 @@
 		<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 		<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
+		<script src="js/showText.js"></script>
+
+		<script src="js/jquery.vide.min.js"></script>
 		<script src="slick/slick.min.js"></script>
+		<script src="js/Chart.min.js"></script>
+		
 	    <script src="js/scrollFlat.js"></script>
 	    <script src="js/scrollUp.js"></script>
     
-		<title>template3</title>
+		<title>Fisherman</title>
 	</head>
 	<body>
 		<div class="wrapper">
-			<div class="background">
-				<div class="img-first"></div>
-				<div class="img-second"></div>
-			</div>
 			<div class="content">
-				<header>
-					<div class="center header">
-			    		<div class="logo"><h4>Logo</h4></div>
-
-			    		<nav id="menu">
-			    			<p><a href="#section1">Section 1</a></p>
-			    			<p><a href="#section2">Section 2</a></p>
-			    			<p><a href="#section3">Section 3</a></p>
-			    			<p><a href="#section4">Section 4</a></p>
-			    			<p><a href="#section5">Section 5</a></p>
-			    		</nav>
-					</div>
-				</header>
-
+	    		<nav id="menu">
+	    			<p><a href="#section1">Video</a></p>
+	    			<p><a href="#section2">Slider</a></p>
+	    			<p><a href="#section3">Pop-up</a></p>
+	    			<p><a href="#section4">Graph</a></p>
+	    		</nav>
 				<main>
-					<section id="section1">
-						<div class="center">
-							<h2>Section 1</h2>
-							<p>Description for Section 1</p>
-						</div>
-					</section>
-
-					<section id="section2">
-						<div class="center flex">
-							<svg viewbox="0 0 100 50">
-								<defs>
-								    <mask id="mask" x="0" y="0" width="100" height="50">
-
-								      <rect x="0" y="0" width="100" height="50" fill="#fff"/>
-								      <text text-anchor="middle" x="50" y="18" dy="1">Section 2</text>
-								      <text text-anchor="middle" x="50" y="30" dy="1">Description for Section 2</text>
-								      <circle cx="5" cy="5" r="2"></circle>
-								      <circle cx="95" cy="5" r="2"></circle>
-								      <circle cx="5" cy="45" r="2"></circle>
-								      <circle cx="95" cy="45" r="2"></circle>
-								    </mask>
-								</defs>
-								<rect class="rect" x="0" y="0" width="100" height="50" mask="url(#mask)"/>
-							</svg>
-						</div>					
-					</section>
-
-					<section id="section3">
-						<div class="center">
-							<h2>Section 3</h2>
-							<p>Description for Section 3</p>
-						</div>
-					</section>
-
-					<section id="section4">
-						<div class="slider">
-							  <div class="slid">
-						  		<img src="img/4.jpg" alt="img">
+					
+						<section id="section1" data-vide-bg="video/fisherman">
+							<h2>Fisherman</h2>
+							<p id="welcome">Welcome to the fishing club!</p>
+						</section>
+						<section id="section2">
+							<div class="slider">
+							  <div class="slid slid1">
+						  		<h3 class="slid_title">First catch fish</h3>
 							  </div>
-							  <div class="slid">
-							  	<img src="img/5.jpg" alt="img">
+							  <div class="slid slid2">
+							  	<h3 class="slid_title">Good nibble</h3>
 							  </div>
-							  <div class="slid">
-							  	<img src="img/6.jpg" alt="img">
+							  <div class="slid slid3">
+							  	<h3 class="slid_title">For any age</h3>
 							  </div>
-							  <div class="slid">
-							  	<img src="img/7.jpg" alt="img">
+							  <div class="slid slid4">
+					  			<h3 class="slid_title">Family fishing</h3>
 							  </div>
-							  <div class="slid">
-							  	<img src="img/8.jpg" alt="img">
+							  <div class="slid slid5">
+							  	<h3 class="slid_title">Fishing with friends</h3>
 							  </div>
 							</div>
-					</section>
+						</section>
+						<section id="section3">
+							<button id="btn_reg">join us</button>
+							<div id="regModal" class="modal">
 
-					<section id="section5">
-						<div class="center">
-							<h2>Section 5</h2>
-							<p>Description for Section 5</p>
-						</div>
-					</section>
+							  <div class="modal-content">
+							    <span class="close">
+							    	<svg xml:space="preserve" enable-background="new 0 0 15 15" height="15px" id="cross" version="1.1" viewBox="0 0 15 15" width="15px" x="0px" xmlns="http://www.w3.org/2000/svg" y="0px">
+							          <path d="M5.792,7.499L0,0.707l0.708-0.706L7.497,5.79L7.5,5.793L14.293,0L15,0.707L9.207,7.5l0.001,0.001L15,14.293
+									  l-0.708,0.706L7.503,9.21L7.5,9.207L0.707,15L0,14.293L5.792,7.499L5.792,7.499z"/>
+							        </svg>
+							    </span>
+							    <p>Registration</p>
+							    <form class="registration">
+
+							    	<input type="text" id="name" name="user_name" placeholder="Name" autofocus>
+								    
+							      	<input maxlength="50" name="email" placeholder="Email" type="email">
+								    
+							      	<textarea name="about_myself" placeholder="About yourself"></textarea>
+
+								    <button class="btn_send" type="submit">
+								      Send
+								    </button>
+							    </form>
+							  </div>
+
+							</div>
+						</section>
+						<section id="section4">
+							<h2>Which fish is better to catch today?</h2>
+							<div class="chart">
+								<canvas id="forecastChart" width="600" height="400"></canvas>
+							</div>
+						</section>
 				</main>
 			</div>
 
-			<a href="#" class="scrollup"></a>
+			<a href="#" class="scrollup"></span></a>
 
 		</div>
+
+		<script src="js/jquery.vide.js"></script>
 		<script src="js/sliderSettings.js"></script>
+		<script src="js/modalScript.js"></script>
+		<script src="js/lineChart.js"></script>
 	</body>
+	
 </html>
