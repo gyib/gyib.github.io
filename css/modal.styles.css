@@ -40,6 +40,10 @@
   right: 0;
   padding: 15px;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .close svg {
   display: block;
@@ -116,4 +120,8 @@ textarea:focus {
   text-align: center;
   background: #CC3333;
   margin-top: 25px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

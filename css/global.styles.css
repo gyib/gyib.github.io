@@ -61,6 +61,10 @@ nav a {
   text-decoration: none;
   cursor: pointer;
   box-shadow: inset 0px 0px 10px #fff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 nav a:hover {
   background: #fdfcfc2b;
@@ -122,6 +126,10 @@ h2{
   box-shadow: 1px 1px #fdfdfd38, 
               2px 2px #fdfdfd38, 
               3px 3px #fdfdfd38;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 #btn_reg:active {
   -webkit-transform: translate(3px, 3px);
@@ -146,6 +154,10 @@ h2{
   text-indent:-9999px;
   background: url(../img/arrowup.svg) no-repeat center;
   box-shadow: 2px 2px 2px #fdfdfd38;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .scrollup:active {
   -webkit-transform: translate(2px, 2px);
