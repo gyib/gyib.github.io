@@ -1,0 +1,62 @@
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 800px;
+	width: 100%;
+	height: auto;
+	margin: 25px auto;
+}
+
+mat-form-field {
+	width: calc(100% - 70px);
+	margin-bottom: 25px;
+}
+
+input{
+	color: #666;
+}
+
+mat-icon {
+	color: #949494;
+	cursor: pointer;
+}
+
+.buttons {
+	display: flex;
+	justify-content: space-between;
+	width: calc(100% - 70px);
+	height: 36px;
+}
+
+.buttons button {
+	width: 100%;
+	max-width: 200px;
+    text-transform: uppercase;
+}
+
+.btn-clear {
+	color: #949494;
+	border: solid 1px #949494;
+	margin-right: 15px;
+}
+
+.btn-create {
+	max-width: 200px;
+    width: 100%;
+	color: #fff;
+    background: #c46;
+    margin-left: auto;
+}
+
+.hidden {display: none}
+
+@media screen and (max-width: 560px) {
+  	form > * {
+	  	width: calc(100% - 30px);
+	}
+	.buttons {
+		width: calc(100% - 30px);
+	}
+}

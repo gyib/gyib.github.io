@@ -1,0 +1,14 @@
+mat-toolbar {
+	background: #3f51b5;
+	color: #FFF;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+    padding: 0 35px;
+}
+
+@media screen and (max-width: 560px) {
+  	.mat-toolbar-row, .mat-toolbar-single-row {
+    padding: 0 15px;
+}
+}

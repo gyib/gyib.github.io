@@ -1,0 +1,19 @@
+<form>
+
+  <mat-form-field>
+    <input matInput placeholder="User name" (input)="showButton()" [formControl]="required" required>
+    <mat-error *ngIf="required.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" (input)="showButton()" [formControl]="required" required>
+    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+    <mat-error *ngIf="required.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <div class="buttons">
+	<button mat-button type="reset" class="btn-clear" (click)="hideButton()" [ngClass]="{'hidden' : wantHide}">Clear</button>
+	<a mat-button type="submit" class="btn-create" routerLink="/edit">Create Ad</a>
+  </div>
+
+</form>

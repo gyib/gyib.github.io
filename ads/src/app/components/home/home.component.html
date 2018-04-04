@@ -1,0 +1,3 @@
+<app-login></app-login>
+
+<app-card (deleteCard)="onDelete($event)" [card]="c" *ngFor="let c of getCards()"></app-card>
