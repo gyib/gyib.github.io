@@ -1,7 +1,7 @@
-import {Component, OnInit } from '@angular/core';
-import { Title } from "@angular/platform-browser";
-import {ActivatedRoute} from "@angular/router";
-import {Card} from "../../card.mod";
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import {ActivatedRoute} from '@angular/router';
+import {Card} from '../../card.mod';
 
 @Component({
   selector: 'app-preview',
@@ -11,10 +11,21 @@ import {Card} from "../../card.mod";
 
 export class PreviewComponent implements OnInit {
 
-  card: Card;
+  @Input() card: Card;
+
+  @Output() deleteCard = new EventEmitter<Card>();
 
   onDelete() {
-    console.log('click Delete - cardID:' + this.card.id);
+    //get data from localstorage
+    const jsonFromLocalStorage: string =  localStorage.getItem('allcards');
+    const currentCardsInLocalStorage: Card[] =  <Card[]>JSON.parse(jsonFromLocalStorage);
+
+    //remove card from array by id
+    const cardsAfterDelete: Card[] = currentCardsInLocalStorage.filter(c => c.id !== this.card.id);
+
+    //save back to localstorage
+    const updatedJson = JSON.stringify(cardsAfterDelete);
+    localStorage.setItem('allcards', updatedJson);
   }
 
   public shouDelete(): boolean {
@@ -25,8 +36,8 @@ export class PreviewComponent implements OnInit {
     const id = route.snapshot.params['id'];
 
     //get data from localstorage
-    let jsonFromLocalStorage: string =  localStorage.getItem('allcards');
-    let currentCardsInLocalStorage: Card[] =  <Card[]>JSON.parse(jsonFromLocalStorage);
+    const jsonFromLocalStorage: string =  localStorage.getItem('allcards');
+    const currentCardsInLocalStorage: Card[] =  <Card[]>JSON.parse(jsonFromLocalStorage);
 
     //get card by id
     this.card = currentCardsInLocalStorage.find(c => c.id == id);
