@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,7 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor() { }
+  public getName(): string {
+    return localStorage.getItem('loguser');
+  }
+
+  logOut() {
+    localStorage.removeItem('loguser');
+  }
+
+  public needToShowLogOut(): boolean {
+    // const want = this.getName() !== null;
+    // return want;
+
+    if (this.getName() != null) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

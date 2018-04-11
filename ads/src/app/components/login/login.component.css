@@ -33,7 +33,7 @@ mat-icon {
 .buttons button {
 	width: 100%;
 	max-width: 200px;
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .btn-clear {
@@ -44,10 +44,10 @@ mat-icon {
 
 .btn-create {
 	max-width: 200px;
-    width: 100%;
+  width: 100%;
 	color: #fff;
-    background: #c46;
-    margin-left: auto;
+  background: #c46;
+  margin-left: auto;
 }
 
 .hidden {display: none}

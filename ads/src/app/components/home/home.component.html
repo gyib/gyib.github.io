@@ -1,3 +1,5 @@
-<app-login></app-login>
+<app-login *ngIf="needToShowLogIn()" (addUser)="onAdd($event)"></app-login>
+
+<button class="btn-login" mat-button type="submit" routerLink="/edit" *ngIf="needToShowCreate()">Create Ad</button>
 
 <app-card (deleteCard)="onDelete($event)" [card]="c" *ngFor="let c of getCards()"></app-card>

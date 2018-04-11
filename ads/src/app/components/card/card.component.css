@@ -1,11 +1,39 @@
 .card-cont {
-	display: flex;
-	background: #CCC;
-	width: calc(100% - 120px);
-	max-width: 680px;
-	margin-bottom: 25px;
-	margin: 0 auto 25px;
-    padding: 25px;
+  position: relative;
+  display: flex;
+  background-color: rgba(0,0,0,.12);
+  width: calc(100% - 120px);
+  max-width: 680px;
+  margin: 0 auto 25px;
+  padding: 25px;
+  cursor: pointer;
+}
+.card-cont::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+}
+.card-cont:hover {
+  -o-transform: translate(-3px, -3px);
+  -ms-transform: translate(-3px, -3px);
+  -moz-transform: translate(-3px, -3px);
+  -webkit-transform: translate(-3px, -3px);
+  transform: translate(-3px, -3px);
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+}
+.card-cont:active {
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+  box-shadow: none;
 }
 
 p {
@@ -27,6 +55,10 @@ p {
 
 .card-info p {
 	color: #3f51b5;
+}
+
+.card-info p:first-child {
+	font-size: 18px;
 }
 
 button {

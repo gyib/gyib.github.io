@@ -20,7 +20,7 @@ import { CreateComponent } from './components/create/create.component';
 const routes = [
   { path: '', component: HomeComponent },
   { path: 'edit', component: CreateComponent },
-  { path: '$id', component: PreviewComponent },
+  { path: ':id', component: PreviewComponent },
 ];
 
 @NgModule({

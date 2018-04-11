@@ -2,16 +2,16 @@
 
   <mat-form-field>
     <input matInput placeholder="Titele" name="titele" required
-    [formControl]="required" 
+    [formControl]="required"
     [(ngModel)]="cardTitle">
 
     <mat-error *ngIf="required.invalid">{{getErrorMessage()}}</mat-error>
-    
+
   </mat-form-field>
 
   <mat-form-field>
     <textarea matInput placeholder="Description" required
-    [type]="hide ? 'description' : 'text'" 
+    [type]="hide ? 'description' : 'text'"
     [formControl]="required"
     [(ngModel)]="cardDescription"></textarea>
 
@@ -19,8 +19,9 @@
   </mat-form-field>
 
   <div class="buttons">
-	<a mat-button type="submit" class="btn-create" (click)="onAdd()">Create</a>
-  <a mat-button type="submit" class="btn-create" routerLink="/$id">Preview</a>
+	<a mat-button type="submit" class="btn-create"
+     (click)="onAdd()"
+     >Create</a>
   </div>
 
 </form>

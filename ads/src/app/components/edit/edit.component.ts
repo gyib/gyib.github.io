@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import { Title } from "@angular/platform-browser";
 import { Card } from '../../card.mod';
+import { Router } from '@angular/router';
 import * as moment from 'moment';
 
 @Component({
@@ -11,14 +12,14 @@ import * as moment from 'moment';
 })
 export class EditComponent implements OnInit {
 
-	private id: number = 2;
+	private id: number;
 
 	cardTitle = '';
 	cardDescription = '';
 
 	@Output() addCard = new EventEmitter<Card>();
 
-	constructor(private titleService: Title) {
+	constructor(private titleService: Title, private router: Router) {
   	}
 
   ngOnInit(): void {
@@ -40,7 +41,7 @@ export class EditComponent implements OnInit {
     this.id = ++this.id;
 
     const card = new Card(
-      this.cardTitle,
+      localStorage.getItem('loguser'),
       moment().format('DD.MM.YYYY'),
       this.cardTitle,
       this.cardDescription,
@@ -51,5 +52,7 @@ export class EditComponent implements OnInit {
 
     this.cardDescription = '';
     this.cardTitle = '';
+
+    this.router.navigate(['/', card.id]);
 	}
 }

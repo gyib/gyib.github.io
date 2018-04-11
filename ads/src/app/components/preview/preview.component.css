@@ -1,3 +1,40 @@
-a {
-	background: #964
+.card-cont {
+  display: flex;
+  background-color: rgba(0,0,0,.12);
+  width: calc(100% - 120px);
+  max-width: 680px;
+  margin: 0 auto 25px;
+  padding: 25px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+.card-text {
+  width: 70%;
+  color: #333;
+}
+.card-text p {
+  font-size: 18px;
+}
+
+.card-info {
+  width: 30%;
+  text-align: right;
+}
+
+.card-info p {
+  color: #3f51b5;
+}
+
+button {
+  color: #fff;
+  background: #c46;
+}
+
+@media screen and (max-width: 560px) {
+  .card-cont {
+    width: calc(100% - 80px);
+  }
 }

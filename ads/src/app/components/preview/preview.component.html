@@ -1,4 +1,15 @@
-<app-card></app-card>
-
-	<a mat-button routerLink="">Home</a>
-
+<div class="card-cont">
+  <div class="card-text">
+    <p>{{ card.title }}</p>
+    <span>{{ card.description }}</span>
+  </div>
+  <div class="card-info">
+    <p>{{ card.name }}</p>
+    <p>{{ card.date }}</p>
+    <button mat-button
+            *ngIf="shouDelete()"
+            (click)="onDelete()"
+            routerLink="/">
+    delete</button>
+  </div>
+</div>

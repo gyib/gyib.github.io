@@ -1,3 +1,13 @@
 <mat-toolbar>
-  <span>Ads board</span>
+  <a class="btn-tb" routerLink="" title="Home">
+  	<i class="material-icons logo">dvr</i>
+  Ads</a>
+
+  <button class="btn-tb" title="Log out"
+          *ngIf="needToShowLogOut()"
+          (click)="logOut()">
+    <P>{{getName()}}</P>
+    <i class="material-icons">exit_to_app</i>
+  </button>
+
 </mat-toolbar>

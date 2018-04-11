@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { User } from '../../user.mod';
 
 @Component({
   selector: 'app-login',
@@ -8,6 +9,11 @@ import { FormControl, Validators } from '@angular/forms';
 })
 
 export class LoginComponent {
+
+  userName = '';
+  userPassword = '';
+
+  @Output() addUser = new EventEmitter<User>();
 
 	wantHide = true;
 
@@ -27,4 +33,17 @@ export class LoginComponent {
 		return this.required.hasError('required') ? 'You must enter a value' : '';
 	}
 
+  onLogin() {
+    if (this.userName === '' || this.userPassword === '') return;
+
+    const user = new User(
+      this.userName,
+      this.userPassword
+    );
+
+    this.addUser.emit(user);
+
+    this.userName = '';
+    this.userPassword = '';
+  }
 }

@@ -16,5 +16,7 @@ export class CardComponent {
 	onDelete() {
 		this.deleteCard.emit(this.card);
 	}
-
+  public shouDelete(): boolean {
+	  return this.card.name == localStorage.getItem('loguser');
+  }
 }

@@ -1,14 +1,47 @@
 mat-toolbar {
+  display: flex;
+  justify-content: space-between;
 	background: #3f51b5;
 	color: #FFF;
 }
 
 .mat-toolbar-row, .mat-toolbar-single-row {
-    padding: 0 35px;
+  padding: 0 35px;
+}
+
+mat-toolbar a {
+  text-decoration: none;
+}
+
+.logo {
+  margin-right: 5px;
+}
+
+.btn-tb {
+  display: flex;
+  align-items: center;
+  background: none;
+  cursor: pointer;
+  height: 36px;
+  color: #fff;
+  padding: 0 16px;
+  border-radius: 2px;
+}
+.btn-tb:hover {
+  background: #37479f;
+}
+
+mat-toolbar p {
+  font-size: 18px;
+  margin: 0 5px;
+}
+
+mat-toolbar i {
+  font-size: 26px;
 }
 
 @media screen and (max-width: 560px) {
-  	.mat-toolbar-row, .mat-toolbar-single-row {
+  .mat-toolbar-row, .mat-toolbar-single-row {
     padding: 0 15px;
-}
+  }
 }

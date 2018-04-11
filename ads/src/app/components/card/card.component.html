@@ -1,4 +1,4 @@
-<div class="card-cont">
+<div class="card-cont" [routerLink]="['/', card.id]">
 	<div class="card-text">
 		<p>{{ card.title }}</p>
 		<span>{{ card.description }}</span>
@@ -6,6 +6,6 @@
 	<div class="card-info">
 		<p>{{ card.name }}</p>
 		<p>{{ card.date }}</p>
-		<button mat-button (click)="onDelete()">delete</button>
+		<button mat-button *ngIf="shouDelete()" (click)="onDelete()">delete</button>
 	</div>
 </div>
