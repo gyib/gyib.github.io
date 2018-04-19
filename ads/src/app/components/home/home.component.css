@@ -6,3 +6,29 @@
   background: #c46;
   margin: 50px auto;
 }
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 70px);
+  max-width: 730px;
+  margin: 0 auto 25px;
+  cursor: pointer;
+}
+
+.btn-pn {
+  width: 100%;
+  min-width: 20px;
+  padding: 0;
+}
+
+.active {
+  background: #c46;
+  color: #fff;
+}
+
+@media screen and (max-width: 560px) {
+  .pagination {
+    width: calc(100% - 30px);
+  }
+}

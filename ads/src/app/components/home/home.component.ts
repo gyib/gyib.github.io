@@ -10,46 +10,64 @@ import { Title } from '@angular/platform-browser';
 })
 export class HomeComponent implements OnInit {
 
+  cardsPerPage = 5;
+  pageNumber = 1;
+  totalPages: number;
+
 	constructor(private titleService: Title) {
   }
 
   ngOnInit(): void {
-		this.titleService.setTitle('Ads');
+	  this.titleService.setTitle('Ads');
 	}
 
 	getCards(): Card[] {
-		const json: string =  localStorage.getItem('allcards');
-    const myCards: Card[] =  <Card[]>JSON.parse(json);
-		return myCards;
+
+    const json: string =  localStorage.getItem('allcards');
+    let allMyCards: Card[] =  <Card[]>JSON.parse(json);
+
+    if (allMyCards === null) {
+      allMyCards = [];
+    }
+
+    const tp = Math.ceil(allMyCards.length / 5);
+    if (this.pageNumber > tp) {
+      this.pageNumber = tp;
+    }
+
+    const startPos = (this.pageNumber - 1) * this.cardsPerPage;
+    const stopPos = startPos + this.cardsPerPage;
+
+    const filteredCards = allMyCards.slice(startPos, stopPos);
+
+		return filteredCards;
 	}
 
 	onDelete(card: Card) {
     //get data from localstorage
-    let jsonFromLocalStorage: string =  localStorage.getItem('allcards');
-    let currentCardsInLocalStorage: Card[] =  <Card[]>JSON.parse(jsonFromLocalStorage);
+    const jsonFromLocalStorage: string =  localStorage.getItem('allcards');
+    const currentCardsInLocalStorage: Card[] =  <Card[]>JSON.parse(jsonFromLocalStorage);
 
     //remove card from array by id
-    let cardsAfterDelete: Card[] = currentCardsInLocalStorage.filter(c => c.id !== card.id);
+    const cardsAfterDelete: Card[] = currentCardsInLocalStorage.filter(c => c.id !== card.id);
 
     //save back to localstorage
-    let updatedJson = JSON.stringify(cardsAfterDelete);
+    const updatedJson = JSON.stringify(cardsAfterDelete);
     localStorage.setItem('allcards', updatedJson);
 	}
 
   onAdd(user: User) {
-    let myUsers = this.getRegistrUsers();
+    const myUsers = this.getRegistrUsers();
     // Check if user exists
-    let foundUser = myUsers.find(u => u.name == user.name);
+    const foundUser = myUsers.find(u => u.name == user.name);
     if (foundUser == null) {
       this.registrNewUser(user);
       this.savesAsLoggedUser(user);
-    }
-    else {
+    } else {
       //Check pasword
       if (foundUser.password == user.password ) {
         this.savesAsLoggedUser(user);
-      }
-      else {
+      } else {
         alert('wrong password');
       }
     }
@@ -61,17 +79,15 @@ export class HomeComponent implements OnInit {
   }
 
   private registrNewUser(user: User) {
-    let myUsers = this.getRegistrUsers();
+    const myUsers = this.getRegistrUsers();
 
-    // let newId:number = myUsers.length + 1;
-    // user.id = newId;
     myUsers.push(user);
-    let newJson: string = JSON.stringify(myUsers);
+    const newJson: string = JSON.stringify(myUsers);
     localStorage.setItem('allusers', newJson);
   }
 
   private getRegistrUsers() {
-    let json: string = localStorage.getItem('allusers');
+    const json: string = localStorage.getItem('allusers');
     let myUsers: User[] = <User[]>JSON.parse(json);
 
     if (myUsers === null) {
@@ -94,5 +110,41 @@ export class HomeComponent implements OnInit {
     } else {
       return true;
     }
+  }
+
+  public setPage(pn: number): void {
+	  this.pageNumber = pn;
+  }
+
+  public countPages(): number[] {
+
+    const json: string =  localStorage.getItem('allcards');
+    const allMyCards: Card[] =  <Card[]>JSON.parse(json);
+
+    this.totalPages = Math.ceil(allMyCards.length / this.cardsPerPage);
+
+    const pages = [];
+
+    for (let i = 1; i <= this.totalPages; i++) {
+      pages.push(i);
+    }
+    return pages;
+  }
+
+  public showPagination(): boolean {
+
+    const json: string =  localStorage.getItem('allcards');
+    const allMyCards: Card[] =  <Card[]>JSON.parse(json);
+
+    if (allMyCards === null) {
+        return false;
+      } else {
+        if (allMyCards.length > 5) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
   }
 }

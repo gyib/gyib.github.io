@@ -3,3 +3,21 @@
 <button class="btn-login" mat-button type="submit" routerLink="/edit" *ngIf="needToShowCreate()">Create Ad</button>
 
 <app-card (deleteCard)="onDelete($event)" [card]="c" *ngFor="let c of getCards()"></app-card>
+
+<div class="pagination" *ngIf="showPagination()">
+  <button class="btn-pn" mat-button
+          [disabled]="pageNumber === 1"
+          (click)="setPage(1)">First</button>
+  <button class="btn-pn" mat-button
+          [disabled]="pageNumber === 1"
+          (click)="setPage(pageNumber - 1)"><i class="material-icons">keyboard_arrow_left</i></button>
+  <button class="btn-pn" mat-button
+          [ngClass]="{active:p === pageNumber}"
+          (click)="setPage(p)" *ngFor="let p of countPages()">{{p}}</button>
+  <button class="btn-pn" mat-button
+          [disabled]="pageNumber === totalPages"
+          (click)="setPage(pageNumber + 1)"><i class="material-icons">keyboard_arrow_right</i></button>
+  <button class="btn-pn" mat-button
+          [disabled]="pageNumber === totalPages"
+          (click)="setPage(totalPages)">Last</button>
+</div>
